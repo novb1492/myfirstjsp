@@ -6,13 +6,13 @@
 
 <%
 memberdao dao= memberdao.getinstance();
-int  rn=dao.insert(user);
+int  rn=dao.sinup(user);
 if(rn==1)
 {
-	out.print("s");
+	response.sendRedirect("login.jsp");
 }
 else 
 {
-	out.print("n");
+	response.sendRedirect("singup.jsp");
 }
 %>
