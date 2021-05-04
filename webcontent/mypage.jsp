@@ -19,5 +19,6 @@
 	<a href="updatepassword.jsp">비밀번호변경</a>
 	<br>
 	<a href="logout.jsp">로그아웃</a>
+	<a href="delete.jsp">회원탈퇴</a>
 </body>
 </html>

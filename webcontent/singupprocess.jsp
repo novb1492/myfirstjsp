@@ -5,14 +5,27 @@
 <jsp:setProperty  name="user" property="*"/>
 
 <%
+request.setCharacterEncoding("utf-8");
+
 memberdao dao= memberdao.getinstance();
+
 int  rn=dao.sinup(user);
+
 if(rn==1)
 {
-	response.sendRedirect("login.jsp");
+%>
+<script>
+alert("회원가입 성공");
+location.href="login.jsp";
+</script>
+
+<%
 }
 else 
-{
-	response.sendRedirect("singup.jsp");
-}
+{%>
+	<script>
+	alert("회원가입 실패");
+	location.href="singup.jsp";
+	</script>
+<%}
 %>

@@ -19,7 +19,7 @@
 <body>
 <h1>비밀번호 변경</h1>
 <br>
-<form action="mypageprocess.jsp">
+<form action="updatepasswordprocess.jsp" method="post">
 현재 비밀번호 :<input type="password" name="pwd" value="">
 <br>
 새로운 비밀번호 :<input type="password" name="newpwd" value="">

@@ -16,8 +16,8 @@ String newpwd=request.getParameter("newpwd");
  	{
 %>
  	<script>
-	alert("변경 완료");
-	history.back();
+	alert("변경 성공");
+	location.href="home.jsp";
 	</script>
  		
 <%
@@ -27,8 +27,8 @@ String newpwd=request.getParameter("newpwd");
  {
 %>
 <script>
-	alert("기존 비밀번호가 틀렸습니다");
-	history.back();
+alert("변경 성공");
+location.href="home.jsp";
 </script>
 <% 
  }

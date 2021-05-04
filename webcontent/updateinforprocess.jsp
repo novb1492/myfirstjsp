@@ -15,8 +15,25 @@ String newemail=request.getParameter("newemail");
 memberdao dao=memberdao.getinstance();
 Membervo mem=new Membervo();
 
+mem.setId(newid);
+mem.setName(newname);
+mem.setEmail(newemail);
+
 int rn=dao.updateinfor(id, mem);
-
 out.print(rn);
-
+if(rn==1)
+{
 %>
+	<script>
+	alert("변경 성공");
+	location.href="updateinfor.jsp";
+	</script>
+<%}
+else
+{
+%>
+	<script>
+	alert("변경 실패");
+	location.href="updateinfor.jsp";
+	</script>
+<%}%>

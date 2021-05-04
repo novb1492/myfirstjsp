@@ -23,7 +23,7 @@
 		session.setAttribute("pwd",m.getPwd());
 		session.setAttribute("name",m.getName());
 		session.setAttribute("email",m.getEmail());
-		url="mypage.jsp";
+		url="home.jsp";
 		
 	}
 	else if(check==-1)

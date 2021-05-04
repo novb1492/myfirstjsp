@@ -23,7 +23,7 @@
 </head>
 <body>
 <h1>회원정보 변경 페이지</h1>
-	<form action="updateinforprocess.jsp">
+	<form action="updateinforprocess.jsp" method="post">
 	아이디 <input  type="text" name="newid" id="user_id" value="<%=id%>">
 	<br>
 	이름 <input type="text" name="newname" value="<%=m.getName()%>">

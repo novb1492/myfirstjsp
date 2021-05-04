@@ -10,7 +10,7 @@
 <body>
 <h1>회원가입 페이지</h1>
 
-	<form action="singupprocess.jsp">
+	<form action="singupprocess.jsp" method="post">
 	아이디 <input onclick="changeColor('pink');" type="text" name="id" id="user_id" placeholder="아이디를 입력해주세요">
 	<br>
 	비밀번호 <input type="password" name="pwd" placeholder="영문과 특수 문자를 표현한 최소 8자">

@@ -37,11 +37,40 @@ public class memberdao {
 		}
 		return dao;
 	} 
-	
+	public int delete(String id)
+	{
+		String sql="delete from members where id=?";
+		
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		int rn=0;
+		
+		try {
+			
+			conn=ds.getConnection();
+			System.out.println(conn+"접속완료"+"update2");
+			
+			pstmt=conn.prepareStatement(sql);
+
+			System.out.println(pstmt);
+			pstmt.setString(1, id);
+			rn=pstmt.executeUpdate();
+			System.out.println(rn+"update2");
+		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			jdbcutil.close(conn);
+			jdbcutil.close(pstmt);
+		}
+
+		return rn;
+	}
 	public int updateinfor(String id,Membervo mem)
 	{
-		boolean check=false;
-	
+		
 		String sql="update members set id=?,name=?,email=? where id=?";
 		
 		Connection conn= null;
