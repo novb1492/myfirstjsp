@@ -8,7 +8,6 @@
 </head>
 <body>
 <h1>로그인 페이지</h1>
-
 	<form action="loginprocess.jsp">
 	아이디 <input  type="text" name="id" id="user_id" placeholder="아이디를 입력해주세요">
 	<br>

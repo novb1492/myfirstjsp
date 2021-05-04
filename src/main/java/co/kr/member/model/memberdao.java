@@ -36,6 +36,76 @@ public class memberdao {
 			dao=new memberdao();
 		}
 		return dao;
+	} 
+	
+	public int updateinfor(String id,Membervo mem)
+	{
+		boolean check=false;
+	
+		String sql="update members set id=?,name=?,email=? where id=?";
+		
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		int rn=0;
+		
+		try {
+			
+			conn=ds.getConnection();
+			System.out.println(conn+"立加肯丰"+"update2");
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, mem.getId());
+			pstmt.setString(2, mem.getName());
+			pstmt.setString(3, mem.getEmail());
+			pstmt.setString(4, id);
+			System.out.println(pstmt);
+			
+			rn=pstmt.executeUpdate();
+			System.out.println(rn+"update2");
+		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			jdbcutil.close(conn);
+			jdbcutil.close(pstmt);
+		}
+
+		return rn;
+	}
+	public int updatepwd(String id,String newpwd)
+	{
+		String sql="update members set pwd=? where id=?";
+		
+		Connection conn= null;
+		PreparedStatement pstmt=null;
+		int rn=0;
+		
+		try {
+			
+			conn=ds.getConnection();
+			System.out.println(conn+"立加肯丰"+"update");
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, newpwd);
+			pstmt.setString(2, id);
+			System.out.println(pstmt);
+			
+			rn=pstmt.executeUpdate();
+			System.out.println(rn+"update");
+		
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			jdbcutil.close(conn);
+			jdbcutil.close(pstmt);
+		}
+
+	
+		return rn;
 	}
 	public Membervo getinfor(String id)
 	{
